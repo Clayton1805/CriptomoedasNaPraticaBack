@@ -22,7 +22,7 @@ db.index.find({ $text: { $search: 'ola' } })
 
 
 
-db.index4.insertOne({
+db.criptoNaPratica.insertOne({
   title: 'ola',
   sinopse: 'frse efrse rvs',
   content: [
@@ -46,7 +46,7 @@ db.index4.insertOne({
   ],
   number: 1 })
 
-db.index4.insertOne({
+db.criptoNaPratica.insertOne({
   title: 'xxx',
   sinopse: 'ola frse efrse rvs',
   content: [
@@ -70,7 +70,7 @@ db.index4.insertOne({
   ],
   number: 2 })
 
-db.index4.insertOne({
+db.criptoNaPratica.insertOne({
   title: 'xxx',
   sinopse: 'frse efrse rvs',
   content: [
@@ -94,7 +94,7 @@ db.index4.insertOne({
   ],
   number: 3 })
 
-db.index4.insertOne({
+db.criptoNaPratica.insertOne({
   title: 'xxx',
   sinopse: 'ola ola ola',
   content: [
