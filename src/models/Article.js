@@ -1,13 +1,35 @@
 const mongoose = require('mongoose');
 
 const articleSchema = mongoose.Schema({
-  title: { type: String },
-  sinopse: { type: String },
-  content: [{ htmlJson: [{ text: { type: String } }] }],
-  number: { type: Number },
+  criptoName: { type: String },
+  articles: [{
+    userId: { type: String },
+    title: { type: String },
+    sinopse: {
+      text: { type: String },
+      urlImg: { type: String },
+    },
+    content: [
+      {
+        contentType: { type: String },
+        htmlJsonDraftJs: {
+          blocks: [
+            {
+              text: { type: String },
+            },
+          ],
+        },
+      },
+    ],
+    like: [{ type: String }],
+    dislike: [{ type: String }],
+  }],
 });
 
-articleSchema
-  .index({ title: 'text', sinopse: 'text', 'content.htmlJson.text': 'text' });
+articleSchema.index({
+  'articles.title': 'text',
+  'articles.sinopse.text': 'text',
+  'articles.content.htmlJsonDraftJs.blocks.text': 'text',
+});
 
 module.exports = mongoose.model('Articles', articleSchema);

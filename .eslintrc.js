@@ -15,5 +15,6 @@ module.exports = {
     "quote-props": "off",
     "no-unused-vars": "off",
     "import/no-unresolved": "off",
+    "consistent-return": "off",
   },
 };
